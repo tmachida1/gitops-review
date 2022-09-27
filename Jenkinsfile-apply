@@ -22,8 +22,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        sc 'oc apply -k samples'
-        //FIX-ME
+        sh 'oc apply -k samples'
         // ignore delete errors caused by templates deleted by previous runs
         sh 'oc delete -f delete --wait || true'
       }
